@@ -1,157 +1,181 @@
 * {
   box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
-  background: #fffaf3;
-  color: #4b2818;
+  background: #fffaf2;
+  color: #292929;
 }
 
-.navbar {
-  background: #fff6eb;
-  padding: 16px 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  border-bottom: 1px solid #ead8c5;
-}
-
-.navbar h1 {
-  font-size: 22px;
-  margin: 0;
-}
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #4b2818;
-  font-weight: bold;
-}
-
-.hero {
-  padding: 35px 8%;
+header {
+  background: #176b3a;
   color: white;
-  background: linear-gradient(120deg, #4b2818, #a66a45);
+  text-align: center;
+  padding: 25px 15px;
 }
 
-.hero h2 {
-  font-size: 36px;
-  margin: 0 0 10px;
+header h1 {
+  margin-bottom: 8px;
 }
 
-.hero p {
-  max-width: 550px;
-  line-height: 1.6;
+.banner {
+  padding: 55px 20px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(120deg, #174b2d, #53a568);
+}
+
+.banner h2 {
+  font-size: 30px;
+  margin-bottom: 12px;
 }
 
 main {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: auto;
-  padding: 20px;
+  padding: 25px 18px;
 }
 
 main > h2 {
-  margin-top: 10px;
+  color: #176b3a;
+  margin: 25px 0 15px;
 }
 
-.menu-grid {
+.daftar-menu {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 15px;
-  margin-bottom: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
 }
 
-.card {
-  border: 1px solid #e6d7c8;
-  border-radius: 10px;
-  padding: 12px;
-  background: #fffdf9;
+.kartu {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px #00000015;
+  border: 1px solid #eee;
 }
 
-.card .gambar {
+.kartu img {
   width: 100%;
-  height: 125px;
+  height: 170px;
   object-fit: cover;
-  border-radius: 8px;
-  background: #f2e4d5;
+  display: block;
 }
 
-.card h3 {
-  margin: 12px 0 5px;
+.isi-kartu {
+  padding: 15px;
+}
+
+.isi-kartu h3 {
+  margin-bottom: 9px;
 }
 
 .harga {
-  margin: 5px 0 10px;
+  color: #176b3a;
+  font-weight: bold;
+  margin-bottom: 12px;
 }
 
 button {
-  background: #80482e;
+  background: #176b3a;
   color: white;
   border: none;
-  border-radius: 20px;
-  padding: 10px 14px;
+  border-radius: 7px;
+  padding: 11px 14px;
   cursor: pointer;
-  font-size: 14px;
   font-weight: bold;
 }
 
-.card button {
+button:hover {
+  background: #10512b;
+}
+
+.isi-kartu button {
   width: 100%;
 }
 
-button:hover {
-  background: #5c301e;
-}
-
-.cart, .about {
-  background: #f4e5d4;
+.keranjang {
+  background: white;
+  border-radius: 12px;
   padding: 20px;
-  border-radius: 10px;
-  margin: 25px 0;
+  box-shadow: 0 3px 12px #00000012;
 }
 
-#daftar-pesanan p {
+#daftar-keranjang {
+  margin: 15px 0;
+}
+
+.item-keranjang {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.item-keranjang button {
+  padding: 6px 10px;
+  margin-left: 5px;
+}
+
+.keranjang h3 {
+  color: #176b3a;
+  margin: 18px 0;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+  margin: 15px 0 7px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  font: inherit;
+}
+
+textarea {
+  min-height: 75px;
+  resize: vertical;
+}
+
+form button {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+#hasil-pesanan {
+  margin-top: 18px;
+  line-height: 1.8;
 }
 
 footer {
-  text-align: center;
-  background: #80482e;
+  background: #174b2d;
   color: white;
-  padding: 18px;
-}
-
-@media (max-width: 800px) {
-  .menu-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  text-align: center;
+  padding: 20px;
+  margin-top: 35px;
 }
 
 @media (max-width: 480px) {
-  .menu-grid {
-    grid-template-columns: 1fr;
+  .banner h2 {
+    font-size: 24px;
   }
 
-  .navbar h1 {
-    font-size: 18px;
+  .daftar-menu {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
 
-  .hero h2 {
-    font-size: 28px;
+  .kartu img {
+    height: 125px;
   }
 }
