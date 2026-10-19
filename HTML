@@ -3,98 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Warung Bu Nana</title>
-
+  <title>Pemesanan Makanan Bu Nana</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
-
-  <!-- HEADER -->
-  <header class="header">
+  <header>
     <h1>🍽️ Warung Bu Nana</h1>
-    <p>Masakan enak, harga bersahabat!</p>
+    <p>Enak, hemat, dan selalu menggugah selera!</p>
   </header>
 
-  <!-- MENU NAVIGASI -->
-  <nav class="navbar">
-    <a href="#beranda">Beranda</a>
-    <a href="#makanan-section">Makanan</a>
-    <a href="#minuman-section">Minuman</a>
-    <a href="#pesanan">Pesanan</a>
-    <a href="#tentang">Tentang</a>
-  </nav>
-
-  <!-- BERANDA -->
-  <section class="hero" id="beranda">
-    <div class="hero-content">
-      <h2>Selamat Datang di Warung Bu Nana</h2>
-      <p>Nikmati makanan dan minuman favoritmu.</p>
-      <a class="tombol-utama" href="#makanan-section">
-        Lihat Menu
-      </a>
-    </div>
+  <section class="banner">
+    <h2>Selamat Datang di Bu Nana</h2>
+    <p>Pilih menu favoritmu dan pesan dengan mudah.</p>
   </section>
 
-  <!-- MENU MAKANAN -->
   <main>
-    <section class="bagian-menu" id="makanan-section">
-      <h2>Menu Makanan</h2>
-      <p class="deskripsi">Pilihan makanan lezat untukmu.</p>
+    <h2>Menu Makanan</h2>
+    <div id="makanan" class="daftar-menu"></div>
 
-      <div id="makanan" class="menu-container"></div>
-    </section>
+    <h2>Menu Minuman</h2>
+    <div id="minuman" class="daftar-menu"></div>
 
-    <!-- MENU MINUMAN -->
-    <section class="bagian-menu" id="minuman-section">
-      <h2>Menu Minuman</h2>
-      <p class="deskripsi">Minuman segar untuk menemani makanmu.</p>
+    <h2>Keranjang Pesanan 🛒</h2>
+    <section class="keranjang">
+      <p>Jumlah item: <span id="jumlah">0</span></p>
+      <div id="daftar-keranjang">Belum ada pesanan.</div>
+      <h3>Total: <span id="total">Rp0</span></h3>
 
-      <div id="minuman" class="menu-container"></div>
-    </section>
+      <form id="form-pesanan">
+        <label for="nama">Nama pemesan</label>
+        <input id="nama" type="text" placeholder="Masukkan nama" required>
 
-    <!-- KERANJANG -->
-    <section class="bagian-pesanan" id="pesanan">
-      <h2>🛒 Keranjang Pesanan</h2>
+        <label for="cara">Cara menerima pesanan</label>
+        <select id="cara" required>
+          <option value="">Pilih cara menerima</option>
+          <option value="Makan di tempat">Makan di tempat</option>
+          <option value="Dibungkus">Dibungkus</option>
+        </select>
 
-      <p>Jumlah barang: <span id="jumlah">0</span></p>
+        <label for="catatan">Catatan (opsional)</label>
+        <textarea id="catatan" placeholder="Contoh: tidak pedas"></textarea>
 
-      <div id="daftar-pesanan">
-        Belum ada pesanan.
-      </div>
+        <button type="submit">Buat Pesanan</button>
+      </form>
 
-      <div class="total-harga">
-        Total: <span id="total">Rp0</span>
-      </div>
-
-      <button
-        type="button"
-        class="tombol-pesan"
-        onclick="pesan()"
-      >
-        Buat Pesanan
-      </button>
-    </section>
-
-    <!-- TENTANG -->
-    <section class="tentang" id="tentang">
-      <h2>Tentang Warung Bu Nana</h2>
-      <p>
-        Warung Bu Nana menyediakan berbagai pilihan makanan
-        dan minuman dengan harga terjangkau.
-        Pilih menu favoritmu dan lihat total pesananmu.
-      </p>
+      <div id="hasil-pesanan" aria-live="polite"></div>
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>&copy; 2026 Warung Bu Nana. Semua hak dilindungi.</p>
+  <footer>
+    <p>© 2026 Warung Bu Nana | Terima kasih sudah memesan ❤️</p>
   </footer>
-
-  <!-- JAVASCRIPT -->
-  <script src="script.js"></script>
-
 </body>
 </html>
